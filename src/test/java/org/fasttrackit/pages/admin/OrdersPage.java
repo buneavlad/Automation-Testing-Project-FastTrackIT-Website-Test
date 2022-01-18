@@ -6,25 +6,25 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class OrdersPage extends PageObject {
 
-    @FindBy(id="post-search-input")
+    @FindBy(id = "post-search-input")
     private WebElementFacade searchField;
 
-    @FindBy(id="search-submit")
+    @FindBy(id = "search-submit")
     private WebElementFacade searchOrders;
 
-    @FindBy(css="a[class=\"order-view\"]>strong")
+    @FindBy(css = "a[class=\"order-view\"]>strong")
     private WebElementFacade numberOfOrder;
 
 
-    public void typeIntoSearchField(String search){
-        typeInto(searchField,search);
+    public void typeIntoSearchField(String search) {
+        typeInto(searchField, search);
     }
 
-    public void clickSearchOrders(){
+    public void clickSearchOrders() {
         clickOn(searchOrders);
     }
 
-    public String getNumberOfOrder(){
+    public String getNumberOfOrder() {
         return numberOfOrder.getText();
     }
 }

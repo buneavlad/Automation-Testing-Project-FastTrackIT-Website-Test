@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyFirstSerenityProjectQA18.iml" filepath="$PROJECT_DIR$/MyFirstSerenityProjectQA18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SerenityProjects.iml" filepath="$PROJECT_DIR$/SerenityProjects.iml" />
     </modules>
   </component>
 </project>

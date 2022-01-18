@@ -16,57 +16,59 @@ import java.util.concurrent.TimeUnit;
 public class ProductPage extends PageObject {
 
 
-
-    @FindBy(id="title")
+    @FindBy(id = "title")
     private WebElementFacade addTitle;
 
 
-    @FindBy(id="content")
+    @FindBy(id = "content")
     private WebElementFacade addContent;
 
-    @FindBy(css="input[name=\"_regular_price\"]")
+    @FindBy(css = "input[name=\"_regular_price\"]")
     private WebElementFacade addPrice;
 
-    @FindBy(id="publish")
+    @FindBy(id = "publish")
     private WebElementFacade publishButton;
 
-    @FindBy(id="message")
+    @FindBy(id = "message")
     private WebElementFacade productMessage;
 
-    @FindBy(css="a[class=\"wp-first-item current\"]")
+    @FindBy(css = "a[class=\"wp-first-item current\"]")
     private WebElementFacade allProducts;
 
-    @FindBy(css="a[class=\"submitdelete\"]")
+    @FindBy(css = "a[class=\"submitdelete\"]")
     private WebElementFacade moveToTrashProduct;
 
-    @FindBy(css="#message > p")
+    @FindBy(css = "#message > p")
     private WebElementFacade removeProductMesage;
 
 
-    public void addTitle(String name){
-        typeInto(addTitle,name);
+    public void addTitle(String name) {
+        typeInto(addTitle, name);
     }
 
-    public void addContent(String text){
-        typeInto(addContent,text);
+    public void addContent(String text) {
+        typeInto(addContent, text);
     }
 
-    public void setPrice(String price){
-        typeInto(addPrice,price);
+    public void setPrice(String price) {
+        typeInto(addPrice, price);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("window.scrollBy(0,-250)", "");
 
     }
-    public void clickPublishButton(){
-        publishButton.withTimeoutOf(5,TimeUnit.SECONDS).waitUntilClickable();
+
+    public void clickPublishButton() {
+        publishButton.withTimeoutOf(5, TimeUnit.SECONDS).waitUntilClickable();
         clickOn(publishButton);
     }
 
-    public String checkProductMessage(){
+    public String checkProductMessage() {
         return productMessage.getText();
     }
 
-    public void clickAllProducts(){clickOn(allProducts);}
+    public void clickAllProducts() {
+        clickOn(allProducts);
+    }
 
     public void hoveroverAddedProduct() {
         Actions action = new Actions(getDriver());
@@ -74,17 +76,14 @@ public class ProductPage extends PageObject {
         action.moveToElement(element).perform();
 
     }
-    public void clickTrashButton(){
+
+    public void clickTrashButton() {
         clickOn(moveToTrashProduct);
     }
 
-    public String removeProductMessage (){
+    public String removeProductMessage() {
         return removeProductMesage.getText();
     }
-
-
-
-
 
 
 }

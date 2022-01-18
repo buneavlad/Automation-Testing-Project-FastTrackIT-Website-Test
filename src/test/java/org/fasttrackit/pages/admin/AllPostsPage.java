@@ -9,16 +9,17 @@ import org.openqa.selenium.interactions.Actions;
 
 public class AllPostsPage extends PageObject {
 
-    @FindBy(css="td.title.column-title.has-row-actions.column-primary.page-title > div.row-actions > span.trash > a")
+    @FindBy(css = "td.title.column-title.has-row-actions.column-primary.page-title > div.row-actions > span.trash > a")
     private WebElementFacade trashButton;
 
-    @FindBy(css="div[id=\"message\"]>p")
+    @FindBy(css = "div[id=\"message\"]>p")
     private WebElementFacade removeMessage;
 
-    public void clickTrashButton(){
+    public void clickTrashButton() {
         clickOn(trashButton);
     }
-    public String getRemoveMessage(){
+
+    public String getRemoveMessage() {
         return removeMessage.getText();
     }
 

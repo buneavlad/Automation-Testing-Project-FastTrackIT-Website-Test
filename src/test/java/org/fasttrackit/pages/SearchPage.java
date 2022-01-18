@@ -13,7 +13,6 @@ public class SearchPage extends PageObject {
     private List<WebElementFacade> products;
 
 
-
     public boolean getProductName(String getname) {
         for (WebElementFacade elementFacade : products) {
             String name = elementFacade.findElement(By.cssSelector(".entry-title a")).getText();
@@ -26,7 +25,6 @@ public class SearchPage extends PageObject {
         return false;
 
     }
-
 
 
 }

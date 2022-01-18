@@ -10,72 +10,82 @@ import java.util.concurrent.TimeUnit;
 @DefaultUrl("http://qa3.fasttrackit.org:8008/checkout")
 
 public class CheckoutPage extends PageObject {
-    @FindBy(css="input[name=\"billing_first_name\"]")
+    @FindBy(css = "input[name=\"billing_first_name\"]")
     private WebElementFacade firstNameField;
 
-    @FindBy(css="input[name=\"billing_last_name\"]")
+    @FindBy(css = "input[name=\"billing_last_name\"]")
     private WebElementFacade lastNameField;
 
-    @FindBy(css="input[name=\"billing_address_1\"]")
+    @FindBy(css = "input[name=\"billing_address_1\"]")
     private WebElementFacade streetAdressField;
 
-    @FindBy(css="input[name=\"billing_city\"]")
+    @FindBy(css = "input[name=\"billing_city\"]")
     private WebElementFacade townField;
 
-    @FindBy(css="input[name=\"billing_postcode\"]")
+    @FindBy(css = "input[name=\"billing_postcode\"]")
     private WebElementFacade postCodeField;
 
-    @FindBy(css="input[name=\"billing_phone\"]")
+    @FindBy(css = "input[name=\"billing_phone\"]")
     private WebElementFacade phoneField;
 
-    @FindBy(css="input[name=\"billing_email\"]")
+    @FindBy(css = "input[name=\"billing_email\"]")
     private WebElementFacade emailField;
 
-    @FindBy(id="place_order")
+    @FindBy(id = "place_order")
     private WebElementFacade placeOrderButton;
 
-    @FindBy(css="div p:first-child")
+    @FindBy(css = "div p:first-child")
     private WebElementFacade receivedOrderMessage;
 
-    @FindBy(css="ul.woocommerce-error li")
+    @FindBy(css = "ul.woocommerce-error li")
     private WebElementFacade invalidEmailMessage;
 
 
-    public void setFirstNameField(String firstname){
-        typeInto(firstNameField,firstname);
+    public void setFirstNameField(String firstname) {
+        typeInto(firstNameField, firstname);
     }
-    public void setLastNameField(String lastname){
-        typeInto(lastNameField,lastname);
+
+    public void setLastNameField(String lastname) {
+        typeInto(lastNameField, lastname);
     }
-    public void setStreetAdressField(String adress){
-        typeInto(streetAdressField,adress);
+
+    public void setStreetAdressField(String adress) {
+        typeInto(streetAdressField, adress);
     }
-    public void setTownField(String town){
-        typeInto(townField,town);
+
+    public void setTownField(String town) {
+        typeInto(townField, town);
     }
-    public void setPostCodeField(String postcode){
-        typeInto(postCodeField,postcode);
+
+    public void setPostCodeField(String postcode) {
+        typeInto(postCodeField, postcode);
     }
-    public void setPhoneField(String phone){
-        typeInto(phoneField,phone);
+
+    public void setPhoneField(String phone) {
+        typeInto(phoneField, phone);
     }
-    public void setEmailField(String email){
-        typeInto(emailField,email);
+
+    public void setEmailField(String email) {
+        typeInto(emailField, email);
 
     }
-    public void clickPlaceOrderButton(){
+
+    public void clickPlaceOrderButton() {
         clickOn(placeOrderButton);
 
     }
-    public void waitAfterButton(){
+
+    public void waitAfterButton() {
         placeOrderButton.withTimeoutOf(30, TimeUnit.SECONDS).waitUntilNotVisible();
 
     }
-    public String getReceivedOrderMessage(){
+
+    public String getReceivedOrderMessage() {
         return receivedOrderMessage.getText();
 
     }
-    public String getInvalidEmailMessage(){
+
+    public String getInvalidEmailMessage() {
         return invalidEmailMessage.getText();
     }
 

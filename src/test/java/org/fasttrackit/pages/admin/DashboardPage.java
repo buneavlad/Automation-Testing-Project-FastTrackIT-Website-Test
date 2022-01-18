@@ -11,24 +11,23 @@ public class DashboardPage extends PageObject {
     @FindBy(css = "#menu-posts-product > ul > li:nth-child(3) > a")
     private WebElementFacade addNewProduct;
 
-    @FindBy(css="#wp-admin-bar-site-name > a")
+    @FindBy(css = "#wp-admin-bar-site-name > a")
     private WebElementFacade frontHomePage;
 
-    @FindBy(css="#menu-posts-product > ul > li:nth-child(4) > a")
+    @FindBy(css = "#menu-posts-product > ul > li:nth-child(4) > a")
     private WebElementFacade categories;
 
     @FindBy(css = "#menu-comments > a > div.wp-menu-name")
     private WebElementFacade commentsPage;
 
-    @FindBy(css="li.wp-first-item.current > a")
+    @FindBy(css = "li.wp-first-item.current > a")
     private WebElementFacade allPosts;
 
-    @FindBy(css="#toplevel_page_woocommerce > ul > li:nth-child(3) > a")
+    @FindBy(css = "#toplevel_page_woocommerce > ul > li:nth-child(3) > a")
     private WebElementFacade coupuns;
 
-    @FindBy(css="#toplevel_page_woocommerce > ul > li.wp-first-item > a")
+    @FindBy(css = "#toplevel_page_woocommerce > ul > li.wp-first-item > a")
     private WebElementFacade orders;
-
 
 
     public void hoveroverProducts() {
@@ -37,19 +36,20 @@ public class DashboardPage extends PageObject {
         action.moveToElement(element).perform();
 
     }
-    public void clickfrontHomePage(){
+
+    public void clickfrontHomePage() {
         clickOn(frontHomePage);
     }
 
-    public void clickAddNewProduct(){
+    public void clickAddNewProduct() {
         clickOn(addNewProduct);
     }
 
-    public void clickCategories(){
+    public void clickCategories() {
         clickOn(categories);
     }
 
-    public void clickCommentsPage(){
+    public void clickCommentsPage() {
         clickOn(commentsPage);
     }
 
@@ -60,7 +60,7 @@ public class DashboardPage extends PageObject {
         action.moveToElement(element).perform();
     }
 
-    public void clickAllPosts(){
+    public void clickAllPosts() {
         clickOn(allPosts);
     }
 
@@ -70,16 +70,13 @@ public class DashboardPage extends PageObject {
         action.moveToElement(element).perform();
     }
 
-    public void clickCoupon(){
+    public void clickCoupon() {
         clickOn(coupuns);
     }
 
-    public void clickOrders(){
+    public void clickOrders() {
         clickOn(orders);
     }
-
-
-
 
 
 }

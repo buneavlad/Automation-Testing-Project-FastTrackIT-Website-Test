@@ -9,44 +9,44 @@ import java.util.List;
 
 public class CategoryProductsPage extends PageObject {
 
-    @FindBy(id="tag-name")
+    @FindBy(id = "tag-name")
     private WebElementFacade nameField;
 
-    @FindBy(id="tag-description")
+    @FindBy(id = "tag-description")
     private WebElementFacade descriptionField;
 
-    @FindBy(id="submit")
+    @FindBy(id = "submit")
     private WebElementFacade addNewCategoryButton;
 
-    @FindBy(css="#the-list>tr")
-    private List <WebElementFacade> categoryList;
+    @FindBy(css = "#the-list>tr")
+    private List<WebElementFacade> categoryList;
 
 
-    public void setNameField(String name){
-        typeInto(nameField,name);
+    public void setNameField(String name) {
+        typeInto(nameField, name);
 
     }
 
-    public void setDescriptionField(String text){
-        typeInto(descriptionField,text);
+    public void setDescriptionField(String text) {
+        typeInto(descriptionField, text);
     }
 
-    public void clickAddNewCategoryButton(){
+    public void clickAddNewCategoryButton() {
         clickOn(addNewCategoryButton);
     }
 
-    public boolean checkIfCategoryIsAdded(String getCategory){
-        for(WebElementFacade elementFacade:categoryList){
-            String category=elementFacade.findElement(By.cssSelector("a[class=\"row-title\"]")).getText();
-            if(getCategory.contains(category)){
+    public boolean checkIfCategoryIsAdded(String getCategory) {
+        for (WebElementFacade elementFacade : categoryList) {
+            String category = elementFacade.findElement(By.cssSelector("a[class=\"row-title\"]")).getText();
+            if (getCategory.contains(category)) {
                 System.out.println(getCategory);
 
                 return true;
 
             }
-        }return false;
+        }
+        return false;
     }
-
 
 
 }

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class BaseTest  {
+ public class BaseTest  {
     @Managed(uniqueSession = true)
     private WebDriver driver;
 

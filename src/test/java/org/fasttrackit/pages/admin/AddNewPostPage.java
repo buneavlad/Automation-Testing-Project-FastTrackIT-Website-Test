@@ -9,26 +9,38 @@ import org.openqa.selenium.interactions.Actions;
 
 public class AddNewPostPage extends PageObject {
 
-    @FindBy(css="a[href=\"post-new.php\"]")
+    @FindBy(css = "a[href=\"post-new.php\"]")
     private WebElementFacade addNew;
 
-    @FindBy(id="title")
+    @FindBy(id = "title")
     private WebElementFacade postTitle;
 
-    @FindBy(css="textarea[name=\"content\"]")
+    @FindBy(css = "textarea[name=\"content\"]")
     private WebElementFacade content;
 
-    @FindBy(css="div[id=\"publishing-action\"]>input[type=\"submit\"]")
+    @FindBy(css = "div[id=\"publishing-action\"]>input[type=\"submit\"]")
     private WebElementFacade publishButton;
 
-    @FindBy(css="div[id=\"message\"]>p")
+    @FindBy(css = "div[id=\"message\"]>p")
     private WebElementFacade publishMessage;
 
-    public void clickAddNew(){clickOn(addNew);}
-    public void setTitle(String title){typeInto(postTitle,title);}
-    public void setContent(String text){typeInto(content,text);}
-    public void clickPublishButton(){clickOn(publishButton);}
-    public String getPublishMessage(){
+    public void clickAddNew() {
+        clickOn(addNew);
+    }
+
+    public void setTitle(String title) {
+        typeInto(postTitle, title);
+    }
+
+    public void setContent(String text) {
+        typeInto(content, text);
+    }
+
+    public void clickPublishButton() {
+        clickOn(publishButton);
+    }
+
+    public String getPublishMessage() {
         return publishMessage.getText();
     }
 

@@ -33,8 +33,6 @@ public class ProductPage extends PageObject {
     private WebElementFacade addABCtoCart;
 
 
-
-
     public void addStarToReview() {
         clickOn(starsReview);
     }
@@ -75,8 +73,6 @@ public class ProductPage extends PageObject {
     public void addAbcToCart() {
         clickOn(addABCtoCart);
     }
-
-
 
 
 }

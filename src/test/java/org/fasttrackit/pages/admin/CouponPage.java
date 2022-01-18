@@ -6,36 +6,40 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class CouponPage extends PageObject {
 
-    @FindBy(css="div.wrap>a")
+    @FindBy(css = "div.wrap>a")
     private WebElementFacade addCouponButton;
 
-    @FindBy(id="title")
+    @FindBy(id = "title")
     private WebElementFacade couponTitle;
 
-    @FindBy(id="coupon_amount")
+    @FindBy(id = "coupon_amount")
     private WebElementFacade couponAmount;
 
-    @FindBy(css="#publishing-action>input[type=\"submit\"]")
+    @FindBy(css = "#publishing-action>input[type=\"submit\"]")
     private WebElementFacade publishButton;
 
-    @FindBy(css="#message>p")
+    @FindBy(css = "#message>p")
     private WebElementFacade couponMessage;
 
 
-    public void clickAddCouponButton(){
+    public void clickAddCouponButton() {
         clickOn(addCouponButton);
 
     }
-    public void setTitle(String title){
-        typeInto(couponTitle,title);
+
+    public void setTitle(String title) {
+        typeInto(couponTitle, title);
     }
-    public void setCouponAmount(String amount){
-        typeInto(couponAmount,amount);
+
+    public void setCouponAmount(String amount) {
+        typeInto(couponAmount, amount);
     }
-    public void clickPublishButton(){
+
+    public void clickPublishButton() {
         clickOn(publishButton);
     }
-    public String getCouponMessage(){
+
+    public String getCouponMessage() {
         return couponMessage.getText();
     }
 }

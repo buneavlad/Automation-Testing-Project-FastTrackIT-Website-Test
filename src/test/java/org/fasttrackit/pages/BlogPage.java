@@ -79,7 +79,8 @@ public class BlogPage extends PageObject {
 
             }
 
-        } return false;
+        }
+        return false;
     }
 }
 
